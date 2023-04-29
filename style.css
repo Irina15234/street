@@ -11,6 +11,8 @@
 	--yellow-home-light-grey: #949692;
 	--yellow-home-shadow: #d8af7b;
 	--yellow-home-window: #b4c7e9;
+	--yellow-home-door: #b9bcb3;
+
 	
 	--green: #98e5a5;
 	--tree: #8e5b61;
@@ -326,6 +328,46 @@ body {
 	display: flex;
 	align-items: center;
 	justify-content: space-evenly;
+}
+
+.build_1 .door {
+	height: 86%;
+	width: 30%;
+	outline: 0.4em solid var(--yellow-home-dark-grey);
+	background: var(--yellow-home-door);
+}
+
+.build_1 .handle {
+	position: absolute;
+	right: 10%;
+	top: 50%;
+	background: var(--yellow-home);
+	outline: 0.1em solid var(--yellow-home-shadow);
+	height: 0.4em;
+	width: 0.4em;
+	border-radius: 100%;
+	transform: translateY(-50%);
+}
+
+.build_1 .threshold {
+	position: absolute;
+	width: calc(100% + 0.8em);
+	height: 20%;
+	background: var(--yellow-home-light-grey);
+	border-top-left-radius: 0.3em;
+	border-top-right-radius: 0.3em;
+	bottom: -0.4em;
+	left: -0.4em;
+}
+
+.build_1 .threshold:after {
+	content: '';
+	position: absolute;
+	width: 100%;
+	height: 40%;
+	background: var(--yellow-home-middle-grey);
+	top: 50%;
+	transform: translateY(-40%);
 }
 
 .build_2 {
