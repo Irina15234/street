@@ -13,6 +13,23 @@
 	--yellow-home-window: #b4c7e9;
 	--yellow-home-door: #b9bcb3;
 
+	--beige-home: #ccaa9e;
+	--beige-home-shadow: #b69989;
+	--beige-home-dark: #9a696d;
+	--beige-home-middle: #977681;
+	--beige-home-light: #b18296;
+	--beige-home-door: #6e4f54;
+	--beige-home-window: #cde0ff;
+	--bottle-light: #e9d6da;
+	--bottle-dark: #d2b9bc;
+	--bottle-shadow: #a19597;
+	--signboard-dark: #8c8e8b;
+	--signboard-light: #cfcecc;
+	--lamppost-light: #809199;
+	--lamppost-dark: #72736d;
+	--rack: #eceddf;
+	--rack-shadow: #b19486;
+
 	
 	--green: #98e5a5;
 	--tree: #8e5b61;
@@ -278,6 +295,13 @@ body {
 	border-top-right-radius: 250px 100px;
 }
 
+.floor {
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+}
+
 .build_1 {
 	width: 18%;
 	height: 50%;
@@ -323,13 +347,6 @@ body {
 	flex-direction: column;
 }
 
-.build_1 .floor {
-	height: 100%;
-	display: flex;
-	align-items: center;
-	justify-content: space-evenly;
-}
-
 .build_1 .door {
 	height: 86%;
 	width: 30%;
@@ -372,8 +389,110 @@ body {
 
 .build_2 {
 	width: 26%;
-	height: 56%;
+	height: 58%;
 }
+
+.build_2 .window {
+	height: 70%;
+	width: 16%;
+	border: 0.4em solid var(--beige-home-dark);
+	background: var(--beige-home-window);
+}
+
+.build_2 .window:after {
+	position: absolute;
+	top: 30%;
+	content: '';
+	height: 10%;
+	width: 100%;
+	background: var(--beige-home-dark);
+}
+
+.build_2 .windowsill-block {
+	background: var(--beige-home-middle);
+}
+
+.build_2 .windowsill-block:first-child {
+	background: var(--beige-home-light);
+}
+
+.build_2 .roof {
+	height: 14%;
+	width: 100%;
+	background: var(--beige-home-shadow);
+}
+
+.build_2 .roof:after, .build_2 .roof:before {
+	content: '';
+	position: absolute;
+	background: var(--beige-home-dark);
+	height: 30%;
+}
+
+.build_2 .roof:before {
+	width: 116%;
+	top: 0;
+	left: -8%;
+}
+
+.build_2 .roof:after {
+	width: 110%;
+	top: 50%;
+	left: -5%;
+}
+
+.build_2 .front {
+	height: 86%;
+	background: var(--beige-home);
+	display: flex;
+	flex-direction: column;
+}
+
+.build_2 .floor {
+	height: 28%;
+}
+
+.build_2 .door {
+	height: 86%;
+	width: 16%;
+	outline: 0.4em solid var(--beige-home-dark);
+	background: var(--beige-home-door);
+	transform: translateY(66%);
+}
+
+.build_2 .handle {
+	position: absolute;
+	right: 10%;
+	top: 50%;
+	background: var(--yellow-home);
+	outline: 0.1em solid var(--yellow-home-shadow);
+	height: 0.4em;
+	width: 0.4em;
+	border-radius: 100%;
+	transform: translateY(-50%);
+}
+
+.build_2 .threshold {
+	position: absolute;
+	width: calc(100% + 0.8em);
+	height: 20%;
+	background: var(--beige-home-light);
+	border-top-left-radius: 0.3em;
+	border-top-right-radius: 0.3em;
+	bottom: -0.4em;
+	left: -0.4em;
+}
+
+.build_2 .threshold:after {
+	content: '';
+	position: absolute;
+	width: 100%;
+	height: 40%;
+	background: var(--beige-home-middle);
+	top: 50%;
+	transform: translateY(-40%);
+}
+
 
 .build_3 {
 	width: 18%;
