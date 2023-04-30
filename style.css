@@ -20,13 +20,17 @@
 	--beige-home-light: #b18296;
 	--beige-home-door: #6e4f54;
 	--beige-home-window: #cde0ff;
+
 	--bottle-light: #e9d6da;
 	--bottle-dark: #d2b9bc;
 	--bottle-shadow: #a19597;
+
 	--signboard-dark: #8c8e8b;
 	--signboard-light: #cfcecc;
+
 	--lamppost-light: #809199;
 	--lamppost-dark: #72736d;
+
 	--rack: #eceddf;
 	--rack-shadow: #b19486;
 
@@ -491,6 +495,143 @@ body {
 	background: var(--beige-home-middle);
 	top: 50%;
 	transform: translateY(-40%);
+}
+
+.bottle {
+	position: absolute;
+	width: 34%;
+	height: 26%;
+	transform: translateY(-100%);
+	left: 6%;
+}
+
+.bottle .block_1 {
+	background: var(--bottle-dark);
+	height: 10%;
+	width: 50%;
+	transform: translateX(50%);
+	border-top-right-radius: 20%;
+	border-top-left-radius: 20%;
+}
+
+.bottle .block_2 {
+	background: var(--bottle-light);
+	height: 80%;
+	border-radius: 10%;
+}
+
+.bottle .block_3 {
+	height: 10%;
+	display: flex;
+	justify-content: space-between;
+	padding: 0 10%;
+}
+
+.bottle .block_4, .bottle .block_4:after, .bottle .block_4:before {
+	height: 0.1em;
+	background: var(--bottle-dark);
+	position: absolute;
+	width: 100%;
+	bottom: 8%;
+}
+
+.bottle .block_4:after, .bottle .block_4:before {
+	position: absolute;
+	content: '';
+	background: var(--bottle-dark);
+	width: 100%;
+	height: 0.1em;
+	top: -3000%;
+}
+
+.bottle .block_4:after {
+	top: -2500%;
+}
+
+.bottle .block_5, .bottle .block_6 {
+	width: 10%;
+	background: linear-gradient(to top, var(--bottle-dark), var(--bottle-shadow));
+}
+
+.lamppost {
+	position: absolute;
+	height: 20vh;
+	width: 2vw;
+	bottom: 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.lamppost .block_1 {
+	height: 10%;
+	width: 100%;
+	background: var(--lamppost-light);
+	border-radius: 100% 100% 50% 50%;
+}
+
+.lamppost .block_2 {
+	height: 70%;
+	width: 20%;
+	background: var(--lamppost-dark);
+}
+
+.lamppost .block_3 {
+	height: 20%;
+	width: 60%;
+	background: var(--lamppost-light);
+	border-radius: 30% 30% 0 0;
+}
+
+.rack {
+	position: absolute;
+	bottom: 0;
+	right: 10%;
+	width: 50%;
+	height: 12%;
+	border: 0.3em solid var(--rack);
+	border-radius: 6%;
+	background: linear-gradient(to top, var(--beige-home), var(--rack-shadow));
+}
+
+.rack:after {
+	content: '';
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: repeating-linear-gradient(to right,
+	transparent,
+	transparent 0.4em,
+	var(--rack) 0.3em,
+	var(--rack) 0.6em);
+}
+
+.signboard {
+	position: absolute;
+	top: 16%;
+	right: -2em;
+	width: 1.3em;
+	border: 0.3em solid var(--signboard-light);
+	border-radius: 1em;
+	background: var(--signboard-dark);
+	height: 30%;
+	outline: 1px solid var(--signboard-dark);
+}
+
+.signboard:after, .signboard:before {
+	content: '';
+	position: absolute;
+	top: 10%;
+	right: 1em;
+	width: 0.7em;
+	height: 10%;
+	background: var(--signboard-dark);
+}
+
+.signboard:after {
+	top: 80%;
 }
 
 
