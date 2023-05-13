@@ -48,3 +48,42 @@ const leafFall = (element) => {
     setTimeout(() => clearInterval(leafFallInterval), 3000);
 };
 
+const handleClickPipe = () => {
+    const element = document.getElementsByClassName('pipe')[0];
+    smoke(element);
+};
+
+const smoke = (element) => {
+    let r = i => Math.random() * (i || 1);
+
+    const smokeFallInterval = setInterval(function () {
+        let smokeItem = document.createElement('div');
+        element.append(smokeItem)
+        let smokeStyle = smokeItem.style;
+
+        smokeStyle.width = `${12 + r(12)}px`;
+        smokeStyle.height = `${12 + r(12)}px`;
+        smokeStyle.opacity = "0.6";
+        smokeStyle.backgroundColor = "#ffffff";
+        smokeStyle.borderRadius = "100%";
+        smokeStyle.position = "absolute";
+        smokeStyle.transition = `${1 + r(3)}s linear`;
+        smokeStyle.left = `${r(element.clientWidth / 2)}px`;
+        smokeStyle.top = "-20px";
+
+        setTimeout(a => {
+            smokeStyle.top = `${-50 -r(100)}px`;
+            smokeStyle.transform = `translate(-${r(20)}px)`;
+        }, 100)
+
+        setTimeout(() => {
+            smokeStyle.opacity = "0";
+            smokeStyle.width = `${22 + r(30)}px`;
+            smokeStyle.height = `${22 + r(30)}px`;
+        }, 1000);
+        setTimeout(() => smokeItem.remove(), 3000);
+
+    }, 200);
+
+    setTimeout(() => clearInterval(smokeFallInterval), 5000);
+};
