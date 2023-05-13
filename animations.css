@@ -1,0 +1,15 @@
+.antenna-animation {
+    -webkit-animation-name: antennaAnimation;
+    -webkit-animation-duration: 2s;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-timing-function: ease;
+}
+
+@-webkit-keyframes antennaAnimation {
+    from {
+        -webkit-transform: rotate(0deg);
+    }
+    to {
+        -webkit-transform: rotate(360deg);
+    }
+}
