@@ -5,9 +5,9 @@
 	--green: #98e5a5;
 	--tree: #8e5b61;
 	--dark-tree: #634b48;
-	
+
 	--build-back: #d7d6d7;
-	
+
 	--yellow-home: #eac07f;
 	--yellow-home-dark-grey: #676962;
 	--yellow-home-middle-grey: #7b8076;
@@ -68,6 +68,15 @@
 
 	--antenna: #e6d3d9;
 	--antenna-border: #ac999f;
+
+	--grey-home: #ced2c3;
+	--grey-home-shadow: #bbbeb3;
+	--grey-home-dark: #5b6765;
+	--grey-home-middle: #728281;
+	--grey-home-light: #919e97;
+	--grey-home-door: #5c6667;
+	--grey-home-window: #d0def9;
+	--grey-home-ladder: #d5eaed;
 }
 
 * {
@@ -85,6 +94,8 @@ body {
 .main-container {
 	height: 600px;
 	width: 1000px;
+	min-height: 600px;
+	min-width: 1000px;
 	margin: auto;
 	background: var(--blue);
 	border-radius: 8px;
@@ -202,7 +213,7 @@ body {
 }
 
 .build-back_1 .block_4 {
-	width: 20%; 
+	width: 20%;
 	height: 20%;
 	bottom: -5%;
     transform: matrix(1, -0.3, 0, 2, 0, 0);
@@ -618,7 +629,7 @@ body {
 .lamppost {
 	position: absolute;
 	height: 20vh;
-	width: 2vw;
+	width: 1em;
 	bottom: 0;
 	display: flex;
 	flex-direction: column;
@@ -773,11 +784,138 @@ body {
 
 .build_4 {
 	width: 12%;
-	height: 36%;
+	height: 46%;
 }
 
+.build_4 .window {
+	height: 70%;
+	width: 60%;
+	border: 0.4em solid var(--grey-home-dark);
+	background: var(--grey-home-window);
+}
 
+.build_4 .windowsill-block {
+	background: var(--grey-home-middle);
+}
 
+.build_4 .windowsill-block:first-child {
+	background: var(--grey-home-light);
+}
+
+.build_4 .shutters {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: repeating-linear-gradient(to right, transparent, transparent 0.5em, var(--grey-home-dark) 0.3em, var(--grey-home-dark) 0.77em);
+}
+
+.build_4 .front {
+	height: 70%;
+	background: repeating-linear-gradient(to bottom,
+	var(--grey-home),
+	var(--grey-home) 0.2em,
+	var(--grey-home-shadow) 0.2em,
+	var(--grey-home-shadow) 0.4em);
+	display: flex;
+	flex-direction: column;
+}
+
+.build_4 .front .floor:first-child {
+	height: 70%;
+}
+
+.build_4 .front__top {
+	height: 20%;
+	background: var(--grey-home);
+	display: flex;
+	flex-direction: column;
+	border-top: 0.5em solid var(--grey-home-dark);
+	border-bottom: 0.5em solid var(--grey-home-dark);
+}
+
+.build_4 .roof {
+	height: 10%;
+	width: 100%;
+	background: var(--grey-home-middle);
+	clip-path: polygon(50% 0, 50% 0, 100% 100%, 0 100%);
+}
+
+.build_4 .front__top .window {
+	border-radius: 100%;
+	width: 2em;
+	height: 2em;
+}
+
+.build_4 .front__top .window:after {
+	content: '';
+	position: absolute;
+	background: var(--grey-home-dark);
+	top: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 0.1em;
+	height: 100%;
+}
+
+.build_4 .front__top .window:before {
+	content: '';
+	position: absolute;
+	background: var(--grey-home-dark);
+	left: 0;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 100%;
+	height: 0.1em;
+}
+
+.build_4 .door {
+	height: 60%;
+	width: 30%;
+	outline: 0.4em solid var(--grey-home-middle);
+	background: var(--grey-home-door);
+	transform: translateY(0%);
+}
+
+.build_4 .ladder {
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	height: 22%;
+	width: 50%;
+	transform: translateX(-50%);
+}
+
+.build_4 .ladder .block_1 {
+	height: 70%;
+	background: repeating-linear-gradient(to right,
+	transparent,
+	transparent 0.2em,
+	var(--grey-home-ladder) 0.2em,
+	var(--grey-home-ladder) 0.4em);
+	border: 0.2em solid var(--grey-home-ladder);
+}
+
+.build_4 .ladder .block_2, .build_4 .ladder .block_2:after, .build_4 .ladder .block_2:before {
+	background: var(--grey-home-ladder);
+	width: 110%;
+	height: 30%;
+}
+
+.build_4 .ladder .block_2:after, .build_4 .ladder .block_2:before {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 30%;
+	height: 33%;
+}
+
+.build_4 .ladder .block_2:after {
+	top: 60%;
+	height: 33%;
+	width: 120%;
+}
 
 .build_5 {
 	width: 26%;
