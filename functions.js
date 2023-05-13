@@ -87,3 +87,8 @@ const smoke = (element) => {
 
     setTimeout(() => clearInterval(smokeFallInterval), 5000);
 };
+
+const handleClickSignboard = () => {
+    document.getElementsByClassName('signboard')[0].classList.add('signboard-animation');
+    setTimeout(() => document.getElementsByClassName('signboard')[0].classList.remove('signboard-animation'), 3000);
+};

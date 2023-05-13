@@ -48,4 +48,23 @@
     100% { transform: translate(0, 0) rotate(0deg); }
 }
 
+.signboard-animation {
+    -webkit-animation-name: signboardAnimation;
+    -webkit-animation-duration: 1.5s;
+    -webkit-animation-iteration-count: 2;
+    -webkit-animation-timing-function: linear;
+    background: linear-gradient(180deg, #641e39, #98749b, #ddf810, #8f4ff4);
+    background-size: 400% 400%;
+}
 
+@-webkit-keyframes signboardAnimation {
+    0% {
+        background-position: 50% 0;
+    }
+    50% {
+        background-position: 50% 100%;
+    }
+    100% {
+        background-position: 50% 0;
+    }
+}
