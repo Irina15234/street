@@ -53,7 +53,21 @@
 	--red-home-pipe-dark: #c8bab1;
 	--red-home-pipe-shadow: #c3aeb7;
 
-	
+	--brown-home: #895d5a;
+	--brown-home-shadow: #7a5751;
+	--brown-home-dark: #5e4241;
+	--brown-home-middle: #724a42;
+	--brown-home-light: #7b5552;
+	--brown-home-door: #6b4e48;
+	--brown-home-window: #d9e4fa;
+	--light-brown-home: #af9a95;
+	--light-brown-home-shadow: #9d8887;
+	--light-brown-home-dark: #655a5e;
+	--light-brown-home-middle: #877277;
+	--light-brown-home-light: #a3908c;
+
+	--antenna: #e6d3d9;
+	--antenna-border: #ac999f;
 }
 
 * {
@@ -334,6 +348,50 @@ body {
 	justify-content: space-evenly;
 }
 
+.handle {
+	position: absolute;
+	right: 10%;
+	top: 50%;
+	background: var(--yellow-home);
+	outline: 0.1em solid var(--yellow-home-shadow);
+	height: 0.4em;
+	width: 0.4em;
+	border-radius: 100%;
+	transform: translateY(-50%);
+}
+
+.antenna {
+	position: absolute;
+	bottom: 0;
+	right: -1em;
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	background: var(--antenna);
+}
+
+.antenna:before, .antenna:after {
+	content: '';
+	position: absolute;
+	background: var(--antenna-border);
+	opacity: 0.7;
+}
+
+.antenna:after {
+	top: 50%;
+	transform: translateY(-50%);
+	height: 0.1em;
+	width: 100%;
+}
+
+.antenna:before {
+	top: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	height: 100%;
+	width: 0.1em;
+}
+
 .build_1 {
 	width: 18%;
 	height: 50%;
@@ -384,18 +442,6 @@ body {
 	width: 30%;
 	outline: 0.4em solid var(--yellow-home-dark-grey);
 	background: var(--yellow-home-door);
-}
-
-.build_1 .handle {
-	position: absolute;
-	right: 10%;
-	top: 50%;
-	background: var(--yellow-home);
-	outline: 0.1em solid var(--yellow-home-shadow);
-	height: 0.4em;
-	width: 0.4em;
-	border-radius: 100%;
-	transform: translateY(-50%);
 }
 
 .build_1 .threshold {
@@ -490,18 +536,6 @@ body {
 	outline: 0.4em solid var(--beige-home-dark);
 	background: var(--beige-home-door);
 	transform: translateY(66%);
-}
-
-.build_2 .handle {
-	position: absolute;
-	right: 10%;
-	top: 50%;
-	background: var(--yellow-home);
-	outline: 0.1em solid var(--yellow-home-shadow);
-	height: 0.4em;
-	width: 0.4em;
-	border-radius: 100%;
-	transform: translateY(-50%);
 }
 
 .build_2 .threshold {
@@ -737,33 +771,109 @@ body {
 	transform: translateY(28%);
 }
 
-.build_3 .handle {
-	position: absolute;
-	right: 10%;
-	top: 50%;
-	background: var(--yellow-home);
-	outline: 0.1em solid var(--yellow-home-shadow);
-	height: 0.4em;
-	width: 0.4em;
-	border-radius: 100%;
-	transform: translateY(-50%);
-}
-
-
-
 .build_4 {
 	width: 12%;
 	height: 36%;
 }
 
+
+
+
 .build_5 {
 	width: 26%;
-	height: 40%;
+	height: 50%;
 }
 
+.build_5 .window {
+	height: 70%;
+	width: 18%;
+	border: 0.4em solid var(--brown-home-dark);
+	background: var(--brown-home-window);
+}
 
+.build_5 .windowsill-block {
+	background: var(--brown-home-middle);
+}
 
+.build_5 .windowsill-block:first-child {
+	background: var(--brown-home-light);
+}
 
+.build_5 .front {
+	height: 60%;
+	background: var(--brown-home);
+	display: flex;
+	flex-direction: column;
+	border-right: 0.3em solid var(--brown-home-shadow);
+	border-top: 0.3em solid var(--brown-home-shadow);
+	border-left: 0.3em solid var(--brown-home-shadow);
+}
+
+.build_5 .front:before {
+	content: '';
+	position: absolute;
+	top: calc(-0.3em - 4%);
+	left: -0.3em;
+	right: -0.3em;
+	height: 4%;
+	background: var(--brown-home-dark);
+	clip-path: polygon(5% 0, 95% 0, 100% 100%, 0 100%);
+}
+
+.build_5 .front__top {
+	height: 40%;
+	background: var(--light-brown-home);
+	display: flex;
+	flex-direction: column;
+	border-top: 0.3em solid var(--light-brown-home-shadow);
+	width: 90%;
+	transform: translateX(5%);
+}
+
+.build_5 .front__top .floor {
+	height: 100%;
+}
+
+.build_5 .front__top .window {
+	border: 0.4em solid var(--light-brown-home-dark);
+	height: 50%;
+}
+
+.build_5 .front__top .windowsill-block {
+	background: var(--light-brown-home-middle);
+}
+
+.build_5 .front__top .windowsill-block:first-child {
+	background: var(--light-brown-home-light);
+}
+
+.build_5 .front__top:before {
+	content: '';
+	position: absolute;
+	top: calc(-0.3em - 8%);
+	left: -0.3em;
+	right: -0.3em;
+	height: 8%;
+	background: var(--light-brown-home-dark);
+}
+
+.build_5 .floor {
+	height: 46%;
+}
+
+.build_5 .door {
+	height: 86%;
+	width: 18%;
+	outline: 0.4em solid var(--brown-home-dark);
+	background: var(--brown-home-door);
+	transform: translateY(28%);
+}
+
+.build_5 .bottle {
+	transform: translateY(-108%);
+	left: auto;
+	right: 10%;
+}
 
 
 
