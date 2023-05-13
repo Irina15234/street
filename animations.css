@@ -13,3 +13,38 @@
         -webkit-transform: rotate(360deg);
     }
 }
+
+.lamppost-animation .block_1 {
+    -webkit-animation-name: lamppostAnimation;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-iteration-count: 3;
+    -webkit-animation-timing-function: linear;
+}
+
+@-webkit-keyframes lamppostAnimation {
+    from {
+        background: var(--lamppost-light);
+    }
+    50% {
+        background: var(--yellow);
+    }
+    to {
+        background: var(--lamppost-light);
+    }
+}
+
+.tree-animation {
+    -webkit-animation-name: treeAnimation;
+    -webkit-animation-duration: .5s;
+    -webkit-animation-iteration-count: 4;
+    -webkit-animation-timing-function: ease-in-out;
+}
+
+@-webkit-keyframes treeAnimation {
+    0% { transform: translate(0, 0) rotate(0deg); }
+    25% { transform: translate(5px, 5px) rotate(5deg); }
+    50% { transform: translate(0, 0) rotate(0); }
+    75% { transform: translate(-5px, 5px) rotate(-5deg); }
+    100% { transform: translate(0, 0) rotate(0deg); }
+}
+
