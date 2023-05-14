@@ -158,3 +158,11 @@ const dropFall = (cloud) => {
 
     setTimeout(() => clearInterval(fallInterval), 3000);
 };
+
+const handleClickSun = () => {
+    document.getElementsByClassName('sun')[0].classList.add('sun-animation');
+    setTimeout(() => document.getElementsByClassName('sun')[0].classList.remove('sun-animation'), 2000);
+
+    document.getElementsByClassName('main-container')[0].classList.add('sky-animation');
+    setTimeout(() => document.getElementsByClassName('main-container')[0].classList.remove('sky-animation'), 2000);
+};

@@ -90,3 +90,41 @@
         transform: translateX(50%);
     }
 }
+
+.sun-animation {
+    -webkit-animation-name: sunAnimation;
+    -webkit-animation-duration: 2s;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-timing-function: linear;
+}
+
+@-webkit-keyframes sunAnimation {
+    0% {
+        background: #fcf87f;
+    }
+    50% {
+        background: #D7D7D3;
+    }
+    100% {
+        background: #fcf87f;
+    }
+}
+
+.sky-animation {
+    -webkit-animation-name: skyAnimation;
+    -webkit-animation-duration: 2s;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-timing-function: linear;
+}
+
+@-webkit-keyframes skyAnimation {
+    0% {
+        background: #e5f2ff;
+    }
+    50% {
+        background: #162C42;
+    }
+    100% {
+        background: #e5f2ff;
+    }
+}
