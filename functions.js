@@ -92,3 +92,69 @@ const handleClickSignboard = () => {
     document.getElementsByClassName('signboard')[0].classList.add('signboard-animation');
     setTimeout(() => document.getElementsByClassName('signboard')[0].classList.remove('signboard-animation'), 3000);
 };
+
+const handleClickBottle = (index) => {
+    const element = document.getElementsByClassName('bottle')[index];
+    element.classList.add('bottle-animation');
+    setTimeout(() => element.classList.remove('bottle-animation'), 6000);
+    rain(element);
+};
+
+const rain = (element) => {
+    let cloud = document.createElement('div');
+    document.body.append(cloud);
+    cloud.classList.add('cloud');
+    cloud.classList.add('cloud__dark');
+
+    let cloudStyle = cloud.style;
+
+    cloudStyle.width = "80px";
+    cloudStyle.height = "40px";
+    cloudStyle.opacity = "0";
+    cloudStyle.backgroundColor = "#444444";
+    cloudStyle.position = "absolute";
+    cloudStyle.transition = "1s ease-out";
+    cloudStyle.left = `${element.getBoundingClientRect().left}px`;
+    cloudStyle.top = "120px";
+
+    setTimeout(() => {
+        cloudStyle.opacity = "1";
+        dropFall(cloud);
+    }, 1000);
+    setTimeout(() => {
+        cloudStyle.opacity = "0";
+    }, 4000);
+
+    //setTimeout(() => cloud.remove(), 5000);
+};
+
+const dropFall = (cloud) => {
+    let r = i => Math.random() * (i || 1);
+
+    const fallInterval = setInterval(function () {
+        let drop = document.createElement('div');
+        cloud.append(drop)
+        let dropStyle = drop.style;
+
+        dropStyle.width = `${2 + r(4)}px`;
+        dropStyle.height = `${4 + r(4)}px`;
+        dropStyle.backgroundColor = "deepskyblue";
+        dropStyle.borderRadius = "40%";
+        dropStyle.position = "absolute";
+        dropStyle.transition = `${1 + r(3)}s cubic-bezier(${r()},${r()},${r()},${r()})`;
+        dropStyle.left = `${10 + r(cloud.clientWidth - 20)}px`;
+        dropStyle.top = `${40 - r(30)}px`;
+        dropStyle.opacity = "0.5";
+
+        setTimeout(a => {
+            dropStyle.top = `${100 + r(30)}px`;
+            dropStyle.transform = `translate(${r(20)}px)`;
+        }, 100)
+
+        setTimeout(() => dropStyle.opacity = "0", 500);
+        setTimeout(() => drop.remove(), 1000);
+
+    }, 10);
+
+    setTimeout(() => clearInterval(fallInterval), 3000);
+};

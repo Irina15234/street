@@ -68,3 +68,25 @@
         background-position: 50% 0;
     }
 }
+
+.bottle-animation .block_1 {
+    -webkit-animation-name: bottleAnimation;
+    -webkit-animation-duration: 6s;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-timing-function: linear;
+}
+
+@-webkit-keyframes bottleAnimation {
+    0% {
+        transform: translateX(50%);
+    }
+    10% {
+        transform: translateX(0) translateY(-170%) rotate(-110deg);
+    }
+    90% {
+        transform: translateX(0) translateY(-170%) rotate(-110deg);
+    }
+    100% {
+        transform: translateX(50%);
+    }
+}

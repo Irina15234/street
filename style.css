@@ -152,6 +152,10 @@ body {
     height: 100%;
 }
 
+.cloud__dark, .cloud.cloud__dark:before, .cloud.cloud__dark:after {
+	background: #444444;
+}
+
 .cloud.cloud_1 {
 	top: 160px;
     left: 160px;
